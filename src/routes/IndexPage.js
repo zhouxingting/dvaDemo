@@ -4,7 +4,7 @@ import styles from './IndexPage.css';
 
 @connect(({ example, loading }) => ({
   example,
-  loading: loading.effects['example/fetch'],
+  loading: loading.effects['example/fetchProvince'],
 }))
 
 class IndexPage extends Component {
