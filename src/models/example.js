@@ -1,5 +1,5 @@
 
-import { queryProvince } from '../services/example';
+import { queryCurrent } from '../services/example';
 export default {
 
   namespace: 'example',
@@ -17,7 +17,8 @@ export default {
         type: 'changeLoading',
         payload: true,
       });
-      const response = yield call(queryProvince);
+      const response = yield call(queryCurrent);
+      console.log("response=", response);
       yield put({
         type: 'setProvince',
         payload: response,

@@ -7,7 +7,13 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@babel/parser": "^7.1.6",
+    "antd": "^3.10.9",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
     "dva": "^2.4.0",
+    "dva-loading": "^2.0.6",
+    "mockjs": "^1.0.1-beta3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
