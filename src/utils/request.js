@@ -63,6 +63,12 @@ export default function request(url, options) {
         ...newOptions.headers,
       };
     }
+  } else {
+    newOptions.method = 'GET';
+    newOptions.headers = {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json; charset=utf-8',
+    };
   }
 
   return fetch(url, newOptions)
