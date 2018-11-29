@@ -1,53 +1,45 @@
-
 import { queryCurrent } from '../services/example';
-export default {
 
+export default {
   namespace: 'example',
 
-  state: {},
-
-  subscriptions: {
-    setup({ dispatch, history }) {  // eslint-disble-line
-    },
+  state: {
+    list: [],
+    currentUser: {},
   },
 
   effects: {
-    *fetchProvince(_, { call, put }) {
-      yield put({
-        type: 'changeLoading',
-        payload: true,
-      });
+    *fetchCurrent(_, { call, put }) {
       const response = yield call(queryCurrent);
       console.log("response=", response);
       yield put({
-        type: 'setProvince',
+        type: 'saveCurrentUser',
         payload: response,
       });
-      yield put({
-        type: 'changeLoading',
-        payload: false,
-      });
-    },
-    *fetch({ payload }, { call, put }) {  // eslint-disable-line
-      yield put({ type: 'save' });
     },
   },
 
   reducers: {
     save(state, action) {
-      return { ...state, ...action.payload };
-    },
-    setProvince(state, action) {
       return {
         ...state,
-        province: action.payload,
+        list: action.payload,
       };
     },
-    changeLoading(state, action) {
+    saveCurrentUser(state, action) {
       return {
         ...state,
-        isLoading: action.payload,
+        currentUser: action.payload,
+      };
+    },
+    changeNotifyCount(state, action) {
+      return {
+        ...state,
+        currentUser: {
+          ...state.currentUser,
+          notifyCount: action.payload,
+        },
       };
     },
   },
-}
+};

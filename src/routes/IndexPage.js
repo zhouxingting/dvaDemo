@@ -4,14 +4,14 @@ import styles from './IndexPage.css';
 
 @connect(({ example, loading }) => ({
   example,
-  loading: loading.effects['example/fetchProvince'],
+  loading: loading.effects['example/fetchCurrent'],
 }))
 
 class IndexPage extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch({
-      type: 'example/fetchProvince',
+      type: 'example/fetchCurrent',
     })
   }
   render() {
