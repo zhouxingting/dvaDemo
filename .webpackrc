@@ -1,5 +1,5 @@
 {
-Z  "extraBabelPlugins": [
+  "extraBabelPlugins": [
     ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
   ]
 }
