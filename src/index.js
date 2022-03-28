@@ -3,7 +3,6 @@ import './index.css';
 import createHistory from 'history/createBrowserHistory';
 import createLoading from 'dva-loading';
 
-// 1. Initialize
 const app = dva({
   history: createHistory(),
   onError(error) {
